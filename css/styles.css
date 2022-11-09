@@ -53,6 +53,11 @@ img {
   text-decoration: none;
 }
 
+.link {
+  transition: color var(--trns);
+}
+
+
 .list {
   list-style: none;
   margin: 0;
@@ -68,20 +73,17 @@ img {
 
 .link:hover,
 .link:focus {
-  transition: color var(--trns);
   color: var(--accent-color);
 }
 
 .btn {
   cursor: pointer;
   background: transparent;
-  transition: color var(--trns), background-color var(--trns);
 }
 
 .btn:hover,
 .btn:focus {
   background-color: #188ce8;
-  transition: background-color var(--trns);
 }
 
 /* HEADER */
@@ -140,7 +142,7 @@ img {
 .header-link.current::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 0;
 
   display: block;
@@ -174,17 +176,23 @@ img {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--background-text-color);
+  transition: color var(--trns);
+ 
 }
 
 .icons {
   margin-right: 10px;
   fill: currentColor;
+
+  transition: color var(--trns);
+
+  transition: border-color var(--trns);
 }
 
 .icons:hover,
 .icons:focus {
   color: var(--accent-color);
-  transition: color var(--trns);
+  
 }
 
 /* HERO */
@@ -240,6 +248,8 @@ img {
   letter-spacing: 0.06em;
   color: var(--second-color);
   background-color: var(--accent-color);
+
+  transition: background-color var(--trns), color var(--trns), box-shadow var(--trns);
 }
 
 /* QUALITY */
@@ -431,13 +441,15 @@ img {
   background-color: var(--second-color);
   border-radius: 50%;
   fill: #afb1b8;
+
+  transition: color var(--trns), background-color var(--trns);
 }
 
 .social-link:hover,
 .social-link:focus {
   background-color: var(--accent-color);
   fill: var(--second-color);
-  transition: background-color var(--trns), fill var(--trns);
+ 
 }
 
 /* OUR CLIENTS */
@@ -461,6 +473,7 @@ img {
 }
 
 .clients-link {
+
   width: 170px;
   height: 92px;
   display: flex;
@@ -470,11 +483,16 @@ img {
   border-radius: 4px;
   border: 1px solid #afb1b8;
 
+  transition: border var(--trns);
+
 }
 
 .clients-icon {
-  transition: border-color var(--trns);
+
   fill: currentColor;
+
+  transition: color var(--trns), border-color var(--trns), fill var(--trns);
+
 }
 
 .clients-link:hover,
@@ -485,7 +503,7 @@ img {
 
 .clients-icon:hover,
 .clients-icon:focus {
-  transition: fill var(--trns);
+
   fill: var(--accent-color);
 }
 
@@ -524,11 +542,13 @@ img {
   color: var(--main-color);
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
+
+  transition: background-color var(--trns);
 }
 
 .social-link-footer:hover,
 .social-link-footer:focus {
-  transition: background-color var(--trns);
+
   background-color: var(--accent-color);
 }
 
@@ -536,9 +556,13 @@ img {
   fill: var(--second-color);
 }
 
+.social-icons {
+  transition: fill var(--trns);
+}
+
 .social-icons:hover,
 .social-icons:focus {
-  transition: fill var(--trns);
+
   fill: var(--second-color);
 }
 
@@ -558,7 +582,7 @@ address {
   letter-spacing: 0.03em;
   color: var(--second-color);
 }
-.adress-item-contacts :not(:last-child) {
+.adress-item-contacts:not(:last-child) {
   margin-bottom: 9px;
 }
 
@@ -570,7 +594,11 @@ address {
   color: var(--adress-txt-main-color);
 }
 
-/* PORTFOLIO HTML */
+/* 
+================
+PORTFOLIO HTML 
+================
+*/
 
 /* OUR WORKS */
 
@@ -607,10 +635,8 @@ address {
   letter-spacing: 0.03em;
   color: var(--main-color);
 
-  transition: color var(--trns);
-  transition: background-color var(--trns);
-  transition: border-color var(--trns);
-  transition: box-shadow var(--trns);
+  transition: background-color var(--trns), color var(--trns), box-shadow var(--trns);
+
 }
 
 .buttons-btn:hover,
@@ -633,15 +659,17 @@ address {
   display: block;
   background: var(--second-color);
   flex-basis: 370px;
+
 }
 
-.project-item-img {
+.projects-item-img {
   display: inline-block;
+  transition: box-shadow var(--trns);
 }
 
 .projects-item-img:hover,
 .projects-item-img:focus {
-  transition: box-shadow var(--trns);
+  
   box-shadow: 
   1px 4px 6px 0px rgba(0, 0, 0, 0.16),
   0px 4px 4px 0px rgba(0, 0, 0, 0.06), 
@@ -712,7 +740,11 @@ address {
   color: var(--background-text-color);
 }
 
-/* MODAL WINDOW */
+/* 
+=============
+MODAL WINDOW 
+=============
+*/
 
 .backdrop {
   position: fixed;
@@ -723,10 +755,9 @@ address {
   width: 100%;
   height: 100%;
   background-color: rgba(47, 48, 58, 0.4);
-  
-  /* backdrop-filter: blur(2px); */
 
   transition: opacity var(--trns), visibility var(--trns);
+
 }
 
 .backdrop.is-hidden {
