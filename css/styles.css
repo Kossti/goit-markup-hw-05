@@ -142,7 +142,7 @@ img {
 .header-link.current::after {
   content: "";
   position: absolute;
-  bottom: -2px;
+  bottom: -1px;
   left: 0;
 
   display: block;
@@ -665,10 +665,12 @@ PORTFOLIO HTML
 .projects-item-img {
   display: inline-block;
   transition: box-shadow var(--trns);
+  
 }
 
 .projects-item-img:hover,
 .projects-item-img:focus {
+  
   
   box-shadow: 
   1px 4px 6px 0px rgba(0, 0, 0, 0.16),
@@ -698,7 +700,8 @@ PORTFOLIO HTML
   background-color:  rgba(33, 150, 243, 0.9)
 }
 
-.projects-item:hover .overlay-slide {
+.projects-item-img:hover .overlay-slide,
+.projects-item-img:focus .overlay-slide {
   transform: translateY(0%);
 }
 
